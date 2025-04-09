@@ -4,19 +4,21 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.*;
 
 @Entity
-public class task {
+public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    private String discription;
+    private String description;
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
-    public task(){}
-    public task(String name, String discription, User user)
+    public Task(){}
+    public Task(String name, String description, User user)
     {
         this.name = name;
-        this.discription = discription
+        this.description = description;
+        this.user = user;
     }
     public String getName() {
         return name;
@@ -26,12 +28,12 @@ public class task {
         this.name = name;
     }
 
-    public String getDiscription() {
-        return discription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDiscription(String discription) {
-        this.discription = discription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public User getUser() {
