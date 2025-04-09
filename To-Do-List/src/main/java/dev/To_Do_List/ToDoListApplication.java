@@ -82,7 +82,7 @@ public class ToDoListApplication implements CommandLineRunner {
 					//show_task(user.get().getId());
 			//	case 1:
 					//add_task(user.get().getId());
-			//	case 2:
+				case 2:
 					//remove_task(user.get().getId());
 				case 3:
 					session = false;
